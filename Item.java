@@ -1,9 +1,15 @@
 
 public class Item {
-	private itemCode String;
 	private itemName String;
+	private itemCode String;
 	private itemPrice float;
 	
+	public Item(){ 
+		itemName="no Item";
+		itemCode="N/a";
+		itemPrice=0.00;
+	}
+
 	public void setItemName(String name) { 
 		itemName=name;
 	}
