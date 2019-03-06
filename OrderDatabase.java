@@ -12,16 +12,19 @@ public class OrderDatabase{
 		orders.put(newOne.getOrderID(),newOne);
 	}
 
-	public Order getOrder(int ID) {
-		Order temp = orders.get(ID);
-		boolean verify = verifyOrder(temp);
+	public Order getOrder(int id,String email) {
+		Order temp = orders.get(id);
+		boolean verify = verifyOrder(temp,email);
 		if (verify) {
 			return temp;
 		}
 		return new Order();
 	}
 
-	public static boolean verifyOrder(Order check){
-		return true; //Check email on the order with the customers email.
+	public static boolean verifyOrder(Order check,String email){
+		if (check.getEmail().equals(email))
+			return true; //Check email on the order with the customers email.
+		else
+			return false;
 	}
 }

@@ -16,7 +16,7 @@ public class SiteUI {
 	}
 
 	public void chooseShipping(){
-
+		
 	}
 
 	public void updateCustomerDatabase(Customer newPerson){
