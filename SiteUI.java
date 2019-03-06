@@ -18,6 +18,19 @@ public class SiteUI {
 	public void chooseShipping(){
 		
 	}
+	/**
+	 * get the values from the user
+	 */
+	public void createNewCustomer(){
+		String name = "";
+		String email = "";
+		String password= "";
+		String address= "";
+		String postalCode= "";
+		int phoneNumber= "";
+		Customer newPerson = new Customer(name,email,password,address,postalCode,phoneNumber);
+		updateCustomerDatabase(newPerson);
+	}
 
 	public void updateCustomerDatabase(Customer newPerson){
 		customerList.addCustomer(newPerson);

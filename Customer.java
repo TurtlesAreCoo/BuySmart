@@ -7,15 +7,19 @@ public class Customer{
 	private String address;
 	private String postalCode;
 	private int phoneNumber;
-	/**
-	 * @return
-	 */
+
+	public  Customer(String n,String e,String p,String a, String pc, int pn) {
+		name = n;
+		email = e;
+		password = encryptPassword(p);
+		address = a;
+		postalCode = pc;
+		phoneNumber = pn; 
+	}
+
 	public String getName() {
 		return name;
 	}
-	/**
-	 * @param
-	 */
 	public void setName(String change){
 		name = change;
 	}
@@ -64,14 +68,5 @@ public class Customer{
 		String key = "";
 		String output = "";
 		return output;
-	}
-
-	public void createAccout(String n,String e,String p,String a, String pc, int pn) {
-		name = n;
-		email = e;
-		password = encryptPassword(p);
-		address = a;
-		postalCode = pc;
-		phoneNumber = pn; 
 	}
 }
