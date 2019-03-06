@@ -8,7 +8,7 @@ public class SiteUI {
 	}
 
 	public void createOrder(){
-
+		
 	}
 
 	public void processPayment(){
@@ -25,5 +25,5 @@ public class SiteUI {
 	public void updateOrderDatabase(Order newOrder){ 
 		orderList.addOrder(newOrder);
 	}
-
+	
 }

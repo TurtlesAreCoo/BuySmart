@@ -7,11 +7,15 @@ public class Customer{
 	private String address;
 	private String postalCode;
 	private int phoneNumber;
-
+	/**
+	 * @return
+	 */
 	public String getName() {
 		return name;
 	}
-
+	/**
+	 * @param
+	 */
 	public void setName(String change){
 		name = change;
 	}
