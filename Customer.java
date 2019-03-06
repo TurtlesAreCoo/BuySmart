@@ -8,26 +8,52 @@ public class Customer{
 	private String postalCode;
 	private int phoneNumber;
 
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 
-	public static String getEmail(){
+	public void setName(String change){
+		name = change;
+	}
+
+	public String getEmail(){
 		return email;
 	}
 
-	public static String getPassword(){
+	public void setEmail(String change){
+		email = change;
+	}
+
+	public String getPassword(){
 		return password;
 	}
-	public static String getAddress(){
+
+	public void setPassword(String change){
+		password = encryptPassword(change);
+	}
+
+	public String getAddress(){
 		return address;
 	}
-	public static String getPostalCode(){
+
+	public void setAddress(String change){
+		address = change;
+	}
+
+	public String getPostalCode(){
 		return postalCode;
 	}
 
-	public static String getPhoneNumber(){
+	public void setPostalCode(String change){
+		postalCode = change;
+	}
+
+	public int getPhoneNumber(){
 		return phoneNumber;
+	}
+
+	public void setPhoneNumber(int change){
+		phoneNumber = change;
 	}
 
 	public static String encryptPassword(String password){
@@ -36,7 +62,7 @@ public class Customer{
 		return output;
 	}
 
-	public void createAccout(String n,String e,String p,String a, String pc, String pn) {
+	public void createAccout(String n,String e,String p,String a, String pc, int pn) {
 		name = n;
 		email = e;
 		password = encryptPassword(p);
