@@ -10,7 +10,8 @@ public class SiteUI {
 	}
 
 	public static void main(String[] args){
-		gotoHome();
+		SiteUI website = new SiteUI();
+		website.gotoHome();
 	}
 
 	public void gotoHome(){
@@ -43,7 +44,7 @@ public class SiteUI {
 		String password= "";
 		String address= "";
 		String postalCode= "";
-		int phoneNumber= "";
+		String  phoneNumber="";
 		Customer newPerson = new Customer(name,email,password,address,postalCode,phoneNumber);
 		updateCustomerDatabase(newPerson);
 	}

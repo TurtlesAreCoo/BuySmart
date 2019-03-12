@@ -1,8 +1,8 @@
 
 public class Item {
-	private itemName String;
-	private itemCode String;
-	private itemPrice float;
+	private String itemName;
+	private String itemCode;
+	private double itemPrice;
 	
 	public Item(){ 
 		itemName="no Item";
@@ -23,13 +23,13 @@ public class Item {
 	public String getItemCode() {
 		return itemCode;
 	}
-	public void setItemPrice(float price) {
+	public void setItemPrice(double price) {
 		if (price > 0)
 			itemPrice=price;
 		else
 			itemPrice = 0;
 	}
-	public float getItemPrice() {
+	public double getItemPrice() {
 		return itemPrice;
 	}
 	public static void main(String[] args) {

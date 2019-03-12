@@ -26,6 +26,7 @@ public class Customer{
 		boolean wrong = false;
 		char c;
 		for(int x = 0; x < change.length();x++){
+			c = change.charAt(x);
 			if (!Character.isLetter(c))
 				wrong = true;
 		}
@@ -76,6 +77,7 @@ public class Customer{
 		boolean wrong = false;
 		char c;
 		for(int x = 0; x < change.length();x++){
+			c = change.charAt(x);
 			if (Character.isDigit(c))
 				number = true;
 			else if(Character.isUpperCase(c))
