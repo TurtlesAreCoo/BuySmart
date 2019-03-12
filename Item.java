@@ -24,7 +24,10 @@ public class Item {
 		return itemCode;
 	}
 	public void setItemPrice(float price) {
-		itemPrice=price;
+		if (price > 0)
+			itemPrice=price;
+		else
+			itemPrice = 0;
 	}
 	public float getItemPrice() {
 		return itemPrice;

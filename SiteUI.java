@@ -1,22 +1,38 @@
 public class SiteUI {
 	CustomerDatabase customerList;
 	OrderDatabase orderList;
+	Bank bank;
 
 	public SiteUI(){
 		customerList = new CustomerDatabase();
 		orderList = new OrderDatabase();
+		bank = new Bank();
 	}
 
-	public void createOrder(){
-		
+	public static void main(String[] args){
+		gotoHome();
 	}
 
-	public void processPayment(){
-
+	public void gotoHome(){
+		displayHome();
 	}
 
-	public void chooseShipping(){
-		
+	public void displayHome(){
+	}
+
+	public void gotoCheckout(){
+		CheckoutUI newPage = new CheckoutUI();
+		newPage.displayCheckoutPage();
+	}
+
+	public void gotoCreateAccount(){
+		CreateAccountUI newPage = new CreateAccountUI();
+		newPage.displayCreateAccountPage();
+	}
+
+	public void gotoSearch(){
+		SearchUI newPage = new SearchUI();
+		newPage.displaySearchPage();
 	}
 	/**
 	 * get the values from the user

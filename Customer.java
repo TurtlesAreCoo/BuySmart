@@ -6,9 +6,11 @@ public class Customer{
 	private String password;
 	private String address;
 	private String postalCode;
-	private int phoneNumber;
-
-	public  Customer(String n,String e,String p,String a, String pc, int pn) {
+	private String phoneNumber;
+	
+	public static void main(String[] args) {
+	}
+	public  Customer(String n,String e,String p,String a, String pc, String pn) {
 		name = n;
 		email = e;
 		password = encryptPassword(p);
@@ -21,7 +23,16 @@ public class Customer{
 		return name;
 	}
 	public void setName(String change){
-		name = change;
+		boolean wrong = false;
+		char c;
+		for(int x = 0; x < change.length();x++){
+			if (!Character.isLetter(c))
+				wrong = true;
+		}
+		if (!wrong)
+			name = change;
+		else
+			name = "";
 	}
 
 	public String getEmail(){
@@ -29,7 +40,29 @@ public class Customer{
 	}
 
 	public void setEmail(String change){
-		email = change;
+		boolean atsign = false;
+		boolean period = false; 
+		boolean wrong = false;
+		char c;
+		for(int x = 0; x < change.length();x++){
+			c = change.charAt(x);
+			if (Character.toString(c).equals('@')){
+				if(!atsign)
+					atsign = true;
+				else 
+					wrong = true;
+			}
+			if (Character.toString(c).equals('.')){
+				if(!period)
+					period = true;
+				else 
+					wrong = true;
+			}
+		}
+		if (atsign && period && !wrong)
+			email = change;
+		else 
+			email = "";
 	}
 
 	public String getPassword(){
@@ -37,7 +70,24 @@ public class Customer{
 	}
 
 	public void setPassword(String change){
-		password = encryptPassword(change);
+		boolean uppercase = false;
+		boolean lowercase = false;
+		boolean number = false;
+		boolean wrong = false;
+		char c;
+		for(int x = 0; x < change.length();x++){
+			if (Character.isDigit(c))
+				number = true;
+			else if(Character.isUpperCase(c))
+				uppercase = true;
+			else if(Character.isLowerCase(c))
+				lowercase = true;
+		}
+		if (uppercase && lowercase && number)
+			password = encryptPassword(change);
+		else 
+			password = "";
+
 	}
 
 	public String getAddress(){
@@ -56,11 +106,11 @@ public class Customer{
 		postalCode = change;
 	}
 
-	public int getPhoneNumber(){
+	public String getPhoneNumber(){
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(int change){
+	public void setPhoneNumber(String change){
 		phoneNumber = change;
 	}
 

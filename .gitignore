@@ -1,0 +1,21 @@
+<<<<<<< HEAD
+
+.DS_Store
+=======
+/Bank.class
+/CheckoutUI.class
+/CreateAccountUI.class
+/Customer.class
+/CustomerDatabase.class
+/Item.class
+/Manager.class
+/Order.class
+/OrderDatabase.class
+/SearchUI.class
+/SiteUI.class
+/ItemTester.class
+/TestJunit.class
+/TestRunner.class
+/MyMathTest.class
+/MyMath.class
+>>>>>>> 6ae5ff69198d1532b20aee27bee5eae8b6c35b3c
