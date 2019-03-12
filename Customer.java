@@ -6,9 +6,11 @@ public class Customer{
 	private String password;
 	private String address;
 	private String postalCode;
-	private int phoneNumber;
-
-	public  Customer(String n,String e,String p,String a, String pc, int pn) {
+	private String phoneNumber;
+	
+	public static void main(String[] args) {
+	}
+	public  Customer(String n,String e,String p,String a, String pc, String pn) {
 		name = n;
 		email = e;
 		password = encryptPassword(p);
@@ -21,11 +23,16 @@ public class Customer{
 		return name;
 	}
 	public void setName(String change){
-		for(char c: change) {
+		boolean wrong = false;
+		char c;
+		for(int x = 0; x < change.length();x++){
 			if (!Character.isLetter(c))
-				throw new InputMismatchExpcetion("That is not a valid name");
+				wrong = true;
 		}
-		name = change;
+		if (!wrong)
+			name = change;
+		else
+			name = "";
 	}
 
 	public String getEmail(){
@@ -35,21 +42,27 @@ public class Customer{
 	public void setEmail(String change){
 		boolean atsign = false;
 		boolean period = false; 
-		for(char c: change){
-			if (c.equals('@')){
+		boolean wrong = false;
+		char c;
+		for(int x = 0; x < change.length();x++){
+			c = change.charAt(x);
+			if (Character.toString(c).equals('@')){
 				if(!atsign)
 					atsign = true;
 				else 
-					throws new InputMismatchExpcetion("Invalid email");
+					wrong = true;
 			}
-			if (c.equals('.')){
+			if (Character.toString(c).equals('.')){
 				if(!period)
 					period = true;
 				else 
-					throws new InputMismatchExpcetion("Invalid email");
+					wrong = true;
 			}
 		}
-		email = change;
+		if (atsign && period && !wrong)
+			email = change;
+		else 
+			email = "";
 	}
 
 	public String getPassword(){
@@ -60,8 +73,9 @@ public class Customer{
 		boolean uppercase = false;
 		boolean lowercase = false;
 		boolean number = false;
-		String out = "Your password is missing a"
-		for(char c: change){
+		boolean wrong = false;
+		char c;
+		for(int x = 0; x < change.length();x++){
 			if (Character.isDigit(c))
 				number = true;
 			else if(Character.isUpperCase(c))
@@ -71,13 +85,8 @@ public class Customer{
 		}
 		if (uppercase && lowercase && number)
 			password = encryptPassword(change);
-		if (!uppercase)
-			out += "Uppercase";
-		if (!lowercase)
-			out += " Lowercase"
-		if (!number)
-			out+= " a Number";
-		throw new InputMismatchExpcetion(out);
+		else 
+			password = "";
 
 	}
 
@@ -97,11 +106,11 @@ public class Customer{
 		postalCode = change;
 	}
 
-	public int getPhoneNumber(){
+	public String getPhoneNumber(){
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(int change){
+	public void setPhoneNumber(String change){
 		phoneNumber = change;
 	}
 
