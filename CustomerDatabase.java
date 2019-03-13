@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 public class CustomerDatabase {
 		Map<String,Customer> customers;
-		
+		//String n,String e,String p,String a, String pc, String pn
 		public CustomerDatabase() {
 			customers = new HashMap<String,Customer>();
 		}
@@ -13,5 +13,11 @@ public class CustomerDatabase {
 
 		public Customer getCustomer(String email){
 			return customers.get(email);
+		}
+		public void removeCustomer(String email){
+			customers.remove(email);
+		}
+		public int getSize(){
+			return customers.size();
 		}
 }
