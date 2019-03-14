@@ -27,4 +27,8 @@ public class OrderDatabase{
 		else
 			return false;
 	}
+
+	public int getSize(){
+		return orders.getSize();
+	}
 }
