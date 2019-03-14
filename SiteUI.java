@@ -2,11 +2,13 @@ public class SiteUI {
 	CustomerDatabase customerList;
 	OrderDatabase orderList;
 	Bank bank;
+	Manager man;
 
 	public SiteUI(){
 		customerList = new CustomerDatabase();
 		orderList = new OrderDatabase();
 		bank = new Bank();
+		man = new Manager();
 	}
 
 	public static void main(String[] args){
@@ -46,14 +48,7 @@ public class SiteUI {
 		String postalCode= "";
 		String  phoneNumber="";
 		Customer newPerson = new Customer(name,email,password,address,postalCode,phoneNumber);
-		updateCustomerDatabase(newPerson);
-	}
-
-	public void updateCustomerDatabase(Customer newPerson){
-		customerList.addCustomer(newPerson);
-	}
-	public void updateOrderDatabase(Order newOrder){ 
-		orderList.addOrder(newOrder);
+		man.verifyCustomer(newPerson);
 	}
 	
 }
