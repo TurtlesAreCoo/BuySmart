@@ -2,6 +2,7 @@ public class ItemTest{
 	public static void main(String[] args){ 
 		ItemTest test = new ItemTest();
 		test.setPriceTest();
+		test.setPriceFail();
 		test.setCodeTest();
 		test.setNameTest();
 		test.newItemTest();
@@ -50,7 +51,7 @@ public class ItemTest{
 			System.out.println("Failed");
 	}
 
-	public void newItemTest(){
+	public void addItemTest(){
 		Item item1 = new Item();
 		boolean passed = true;
 		System.out.println("Expected: "+ "no Item");
