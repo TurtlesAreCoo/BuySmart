@@ -5,6 +5,7 @@ public class OrderTest{
 		test.setSShippingTest();
 		test.setEShippingTest();
 		test.setEmailTest();
+		test.addItemTest();
 	}
 	public void setOrderIDTest(){
 		Order order = new Order();
@@ -46,4 +47,18 @@ public class OrderTest{
 		else 
 			System.out.println("Failed");
 	}
+
+	public void addItemTest(){
+		Order order = new Order();
+		Item item = new Item();
+		item.setItemName("Apple");
+		order.addItem(item);
+		System.out.println("Expectd Size: 1");
+		System.out.println("Actual  SIze: "+order.getSize());
+		if (order.getSize()==1)
+			System.out.println("Passed");
+		else
+			System.out.println("Failed");
+	}
+
 }

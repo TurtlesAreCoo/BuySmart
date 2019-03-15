@@ -5,6 +5,8 @@ public class CustomerTest{
 		test.setEmailFailTest();
 		test.setPasswordTest();
 		test.setPasswordFailTest();
+		test.setAddressTest();
+		test.setPostalCodeTest();
 	}
 
 	public void setPhoneNumberTest(){
@@ -28,6 +30,7 @@ public class CustomerTest{
 		else
 			System.out.println("Failed");
 	}
+
 	public void setPasswordTest(){
 		Customer cus = new Customer();
 		cus.setPassword("Testing123");
@@ -48,4 +51,27 @@ public class CustomerTest{
 		else
 			System.out.println("Failed");
 	}
+
+	public void setAddressTest(){
+		Customer cus = new Customer();
+		cus.setPassword("111 Street Road");
+		System.out.println("Expected "+ "111 Street Road");
+		System.out.println("Actual "+ cus.getEmail());
+		if (cus.getPassword().equals("111 Street Road"))
+			System.out.println("Passed");
+		else
+			System.out.println("Failed");
+	}
+
+	public void setPostalCodeTest(){
+		Customer cus = new Customer();
+		cus.setPassword("M1M 1M1");
+		System.out.println("Expected "+ "M1M 1M1");
+		System.out.println("Actual "+ cus.getPostalCode());
+		if (cus.getPassword().equals("M1M 1M1"))
+			System.out.println("Passed");
+		else
+			System.out.println("Failed");
+	}
+
 }

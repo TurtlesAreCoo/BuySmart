@@ -17,6 +17,17 @@ public class ItemTest{
 			System.out.println("Failed");
 	}
 
+	public void setPriceFail(){
+		Item item1 = new Item();
+		item1.setItemPrice(-1.23);
+		System.out.println("Expected: 0.00");
+		System.out.println("Actual  : "+ item1.getItemPrice());
+		if (item.getItemPrice()==0)
+			System.out.println("Passed");
+		else
+			System.out.println("Failed");
+	}
+
 	public void setCodeTest(){
 		Item item1 = new Item();
 		item1.setItemCode("11223344");
