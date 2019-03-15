@@ -2,17 +2,17 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class OrderDatabase{ 
-	Map<Integer,Order> orders;
+	Map<String,Order> orders;
 
 	public OrderDatabase(){
-		orders = new HashMap<Integer, Order>();
+		orders = new HashMap<String, Order>();
 	}
 
 	public void addOrder(Order newOne){
 		orders.put(newOne.getOrderID(),newOne);
 	}
 
-	public Order getOrder(int id,String email) {
+	public Order getOrder(String id,String email) {
 		Order temp = orders.get(id);
 		boolean verify = verifyOrder(temp,email);
 		if (verify) {
@@ -29,6 +29,6 @@ public class OrderDatabase{
 	}
 
 	public int getSize(){
-		return orders.getSize();
+		return orders.size();
 	}
 }
