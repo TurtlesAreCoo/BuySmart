@@ -60,4 +60,8 @@ public class Order {
 		Item temp = cart.get(num);
 		return temp;
 	}
+
+	public int getSize(){
+		return cart.size();
+	}
 }
