@@ -59,4 +59,12 @@ public class Manager{
 	public Customer getAccount(String email){
 		return customerList.getCustomer(email);
 	}
+
+	public int getCustomerDBSize(){
+		return customerList.getSize();
+	}
+
+	public int getOrderDBSize(){
+		return orderList.getSize();
+	}
 }
