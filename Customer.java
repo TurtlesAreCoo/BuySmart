@@ -40,7 +40,7 @@ public class Customer{
 		char c;
 		for(int x = 0; x < change.length();x++){
 			c = change.charAt(x);
-			if (!Character.isLetter(c))
+			if (!Character.isLetter(c) && !Character.isWhitespace(c))
 				wrong = true;
 		}
 		if (wrong)
@@ -62,11 +62,11 @@ public class Customer{
 	public boolean checkEmail(String change){
 		boolean atsign = false;
 		boolean period = false; 
-		if (change.indexOf("@")!=-1){
+		if (change.indexOf("@")!=-1)
 			atsign = true;
-		} else if (change.indexOf(".")!= -1) {
+		if (change.indexOf(".")!= -1) 
 			period = true;
-		}
+		
 		if (atsign && period)
 			return true;
 		else 

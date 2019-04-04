@@ -2,13 +2,18 @@ public class OrderDatabaseTest{
 	public static void main(String[] args){
 		OrderDatabaseTest test = new OrderDatabaseTest();
 		test.addOrderTest();
+		System.out.println(""); 
 		test.verifyOrderTest();
+		System.out.println(""); 
 		test.verifyOrderFail();
+		System.out.println(""); 
 		test.getSizeTest();
+		System.out.println(""); 
 		test.getOrderTest();
 	}
 
 	public void addOrderTest(){
+		System.out.println("Test: Add Order"); 
 		OrderDatabase orderDB = new OrderDatabase();
 		Order cart = new Order();
 		System.out.println("Expected Before: 0");
@@ -23,6 +28,7 @@ public class OrderDatabaseTest{
 	}
 
 	public void verifyOrderTest(){
+		System.out.println("Test: Verify Order"); 
 		OrderDatabase orderDB = new OrderDatabase();
 		Order cart = new Order();
 		cart.setEmail("Kingsley111@gmail.com");
@@ -36,6 +42,7 @@ public class OrderDatabaseTest{
 	}
 
 	public void verifyOrderFail(){
+		System.out.println("Test: Verify Order FAIL"); 
 		OrderDatabase orderDB = new OrderDatabase();
 		Order cart = new Order();
 		cart.setEmail("Kingsley111@gmail.com");
@@ -49,6 +56,7 @@ public class OrderDatabaseTest{
 	}
 
 	public void getSizeTest(){
+		System.out.println("Test: Get Order Size"); 
 		OrderDatabase orderDB = new OrderDatabase();
 		Order cart = new Order();
 		System.out.println("Expected Before: 0");
@@ -70,13 +78,14 @@ public class OrderDatabaseTest{
 	}
 
 	public void getOrderTest(){
+		System.out.println("Test: Get Order"); 
 		Order cart = new Order();
 		OrderDatabase orderDB = new OrderDatabase();
 		orderDB.addOrder(cart);
-		Order dank = orderDB.get("000000","Johndoe@gmail.com");
-		if (dank.getID.equals("000000")){
+		Order dank = orderDB.getOrder("000000","Johndoe@gmail.com");
+		if (dank.getOrderID().equals("000000")){
 			System.out.println("Correct ID");
-			if (dank.getEmail.equals("Johndoe@gmail.com")){
+			if (dank.getEmail().equals("Johndoe@gmail.com")){
 				System.out.println("Correct Email");
 				System.out.println("Passed");
 			} else {

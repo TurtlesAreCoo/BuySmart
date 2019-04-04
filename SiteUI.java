@@ -1,5 +1,4 @@
 public class SiteUI {
-
 	private Manager man;
 	private CheckoutUI checkoutPage;
 	private CreateAccountUI createAccountPage;
@@ -56,20 +55,6 @@ public class SiteUI {
 
 	public void updateComparePage(){
 		compareItemPage.updatePage();
-	}
-
-	/**
-	 * get the values from the user
-	 */
-	public void createNewCustomer(){
-		String name = "";
-		String email = "";
-		String password= "";
-		String address= "";
-		String postalCode= "";
-		String  phoneNumber="";
-		Customer newPerson = new Customer(name,email,password,address,postalCode,phoneNumber);
-		man.verifyCustomer(newPerson);
 	}
 	
 }

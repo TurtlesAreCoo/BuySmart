@@ -2,11 +2,15 @@ public class CustomerDBTest{
 	public static void main(String[] args) {
 		CustomerDBTest test = new CustomerDBTest();
 		test.addCustomerTest();
+		System.out.println(""); 
 		test.getCustomerTest();
+		System.out.println(""); 
 		test.removeCustomerTest();
+		System.out.println(""); 
 		test.getSizeTest();
 	}
 	public void addCustomerTest(){
+		System.out.println("Test: Add Customer");
 		CustomerDatabase testDB = new CustomerDatabase();
 		Customer cus = new Customer("Evan Zhou","evan99@gmail.com","Password123","111 Dank Meme","A1A 1A1","1112223333");
 		testDB.addCustomer(cus);
@@ -18,6 +22,7 @@ public class CustomerDBTest{
 			System.out.println("Failed");
 	}
 	public void getCustomerTest(){
+		System.out.println("Test: Get Correct Custoemr");
 		CustomerDatabase testDB = new CustomerDatabase();
 		Customer cus = new Customer("Evan Zhou","evan99@gmail.com","Password123","111 Dank Meme","A1A 1A1","1112223333");
 		testDB.addCustomer(cus);
@@ -53,6 +58,7 @@ public class CustomerDBTest{
 		}
 	}
 	public void removeCustomerTest(){
+		System.out.println("Test: Remove Customer");
 		CustomerDatabase testDB = new CustomerDatabase();
 		Customer cus = new Customer("Evan Zhou","evan99@gmail.com","Password123","111 Dank Meme","A1A 1A1","1112223333");
 		testDB.addCustomer(cus);
@@ -67,6 +73,7 @@ public class CustomerDBTest{
 			System.out.println("Failed");
 	}
 	public void getSizeTest(){
+		System.out.println("Test: Get Number of Customers");
 		CustomerDatabase testDB = new CustomerDatabase();
 		Customer cus = new Customer("Evan Zhou","evan99@gmail.com","Password123","111 Dank Meme","A1A 1A1","1112223333");
 		testDB.addCustomer(cus);

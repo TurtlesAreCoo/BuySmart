@@ -13,6 +13,13 @@ public class Order {
 		cart = new ArrayList<Item>();
 	}
 
+	public Order(String id, boolean ship, String e){
+		orderID = id;
+		standard = ship;
+		email = e;
+		cart = new ArrayList<Item>();
+	}
+
 	public void setOrderID(String ID){
 		orderID = ID;
 	}
