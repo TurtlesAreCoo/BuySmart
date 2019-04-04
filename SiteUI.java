@@ -1,14 +1,21 @@
 public class SiteUI {
-	CustomerDatabase customerList;
-	OrderDatabase orderList;
-	Bank bank;
-	Manager man;
+
+	private Manager man;
+	private CheckoutUI checkoutPage;
+	private CreateAccountUI createAccountPage;
+	private SearchUI searchPage; 
+	private CompareItemUI compareItemPage;
+	private AccountInfoUI accountInfoPage;
+	private CheckOrdersUI OrderStatusPage;
 
 	public SiteUI(){
-		customerList = new CustomerDatabase();
-		orderList = new OrderDatabase();
-		bank = new Bank();
 		man = new Manager();
+		checkoutPage = new CheckoutUI();
+		createAccountPage = new CreateAccountUI();
+		searchPage = new SearchUI();
+		compareItemPage = new CompareItemUI();
+		accountInfoPage = new AccountInfoUI();
+		OrderStatusPage = new CheckOrdersUI();
 	}
 
 	public static void main(String[] args){
@@ -17,26 +24,40 @@ public class SiteUI {
 	}
 
 	public void gotoHome(){
-		displayHome();
+		this.displayHome();
 	}
 
 	public void displayHome(){
 	}
 
 	public void gotoCheckout(){
-		CheckoutUI newPage = new CheckoutUI();
-		newPage.displayCheckoutPage();
+		checkoutPage.displayCheckoutPage();
 	}
 
 	public void gotoCreateAccount(){
-		CreateAccountUI newPage = new CreateAccountUI();
-		newPage.displayCreateAccountPage();
+		createAccountPage.displayCreateAccountPage();
 	}
 
 	public void gotoSearch(){
-		SearchUI newPage = new SearchUI();
-		newPage.displaySearchPage();
+		searchPage.displaySearchPage();
 	}
+	
+	public void gotoCompare(){
+		compareItemPage.displayComparePage();
+	}
+
+	public void gotoAccountInfo(){
+		accountInfoPage.displayAccountInfoPage();
+	}
+
+	public void gotoOrderStatus(){
+		OrderStatusPage.displayOrders();
+	}
+
+	public void updateComparePage(){
+		compareItemPage.updatePage();
+	}
+
 	/**
 	 * get the values from the user
 	 */

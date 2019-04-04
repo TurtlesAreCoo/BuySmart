@@ -30,6 +30,12 @@ public class Customer{
 		return name;
 	}
 	public void setName(String change){
+		if (checkName(change))
+			name = change;
+		else
+			name = "Invalid";
+	}
+	public boolean checkName(String change){
 		boolean wrong = false;
 		char c;
 		for(int x = 0; x < change.length();x++){
@@ -37,10 +43,10 @@ public class Customer{
 			if (!Character.isLetter(c))
 				wrong = true;
 		}
-		if (!wrong)
-			name = change;
-		else
-			name = "Invalid";
+		if (wrong)
+			return false;
+		else 
+			return true;
 	}
 
 	public String getEmail(){
@@ -48,6 +54,12 @@ public class Customer{
 	}
 
 	public void setEmail(String change){
+		if (checkEmail(change))
+			email = change;
+		else 
+			email = "Invalid";
+	}
+	public boolean checkEmail(String change){
 		boolean atsign = false;
 		boolean period = false; 
 		if (change.indexOf("@")!=-1){
@@ -56,9 +68,9 @@ public class Customer{
 			period = true;
 		}
 		if (atsign && period)
-			email = change;
+			return true;
 		else 
-			email = "Invalid";
+			return false;
 	}
 
 	public String getPassword(){
@@ -66,6 +78,13 @@ public class Customer{
 	}
 
 	public void setPassword(String change){
+		if (checkPassword(change))
+			password = change;
+		else 
+			password = "Invalid";
+
+	}
+	public boolean checkPassword(String change){
 		boolean uppercase = false;
 		boolean lowercase = false;
 		boolean number = false;
@@ -81,11 +100,10 @@ public class Customer{
 				lowercase = true;
 		}
 		if (uppercase && lowercase && number)
-			password = change;
+			return true;
 			//password = encryptPassword(change);
 		else 
-			password = "Invalid";
-
+			return false;
 	}
 
 	public String getAddress(){
@@ -109,6 +127,13 @@ public class Customer{
 	}
 
 	public void setPhoneNumber(String change){
+		if (checkPhoneNumber(change))
+			phoneNumber = change;
+		else
+			phoneNumber = "Invalid";
+	}
+
+	public boolean checkPhoneNumber(String change){
 		char c;
 		boolean valid = true;
 		for(int x = 0;x < change.length(); x++){
@@ -116,10 +141,7 @@ public class Customer{
 			if (!Character.isDigit(c))
 				valid = false;
 		}
-		if (valid)
-			phoneNumber = change;
-		else 
-			phoneNumber = "Invalid";
+		return valid;
 	}
 
 	public static String encryptPassword(String password){

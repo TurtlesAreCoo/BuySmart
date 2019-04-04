@@ -13,6 +13,7 @@ public class Item {
 	public void setItemName(String name) { 
 		itemName=name;
 	}
+
 	public String getItemName() {
 		return itemName;
 	}
@@ -20,19 +21,19 @@ public class Item {
 	public void setItemCode(String code) {
 		itemCode=code;
 	}
+
 	public String getItemCode() {
 		return itemCode;
 	}
+
 	public void setItemPrice(double price) {
 		if (price > 0)
 			itemPrice=price;
 		else
 			itemPrice = 0;
 	}
+	
 	public double getItemPrice() {
 		return itemPrice;
-	}
-	public static void main(String[] args) {
-		
 	}
 }
